@@ -49,7 +49,10 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: insta_clone_production
-  username: insta_clone
-  password: <%= ENV['INSTA_CLONE_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: db.ivirjmkyvjrqkekfdbdk.supabase.co
+  database: postgres
+  username: postgres
+  password: LNQ21WmER6sUWPXP
