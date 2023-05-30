@@ -18,6 +18,9 @@
               <%= link_to "Delete", post, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
             <% end %>
           </div>
+          <div>
+            <%= render 'favorites/favorite_button', user: @user, post: post %>
+          </div>
         </div>
       </li>
     <% end %>

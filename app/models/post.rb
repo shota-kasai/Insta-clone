@@ -9,4 +9,7 @@ class Post < ApplicationRecord
   with_options presence: true do
     validates :image
   end
+  
+  has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'post_id'
+  has_many :liked, through: :reverses_of_favorite, source: :user
 end

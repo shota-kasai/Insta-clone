@@ -3,8 +3,9 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:destroy]
   
   def create
-    # @post = current_user.posts.build(post_params)
-    if current_user.posts.create(post_params)
+    @post = current_user.posts.build(post_params)
+    if @post.save
+    #if current_user.posts.create(post_params)
       flash[:success] = 'メッセージを投稿しました。'
       redirect_to root_url
     else
