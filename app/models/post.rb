@@ -10,6 +10,6 @@ class Post < ApplicationRecord
     validates :image
   end
   
-  has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'post_id'
+  has_many :reverses_of_favorite, class_name: 'Favorite', foreign_key: 'post_id', dependent: :destroy
   has_many :liked, through: :reverses_of_favorite, source: :user
 end
