@@ -2,12 +2,12 @@ class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show, :followings, :followers, :likes]
   
   def index
-    @pagy, @users = pagy(User.order(id: :desc), items: 25)
+    @pagy, @users = pagy(User.order(id: :desc), items: 10)
   end
 
   def show
     @user = User.find(params[:id])
-    @pagy, @posts = pagy(@user.posts.order(id: :desc))
+    @pagy, @posts = pagy(@user.posts.order(id: :desc), items: 3)
     counts(@user)
   end
 
@@ -29,19 +29,19 @@ class UsersController < ApplicationController
   
   def followings
     @user = User.find(params[:id])
-    @pagy, @followings = pagy(@user.followings)
+    @pagy, @followings = pagy(@user.followings, items: 3)
     counts(@user)
   end
 
   def followers
     @user = User.find(params[:id])
-    @pagy, @followers = pagy(@user.followers)
+    @pagy, @followers = pagy(@user.followers, items: 3)
     counts(@user)
   end
   
   def likes
     @user = User.find(params[:id])
-    @pagy, @likes = pagy(@user.likes)
+    @pagy, @likes = pagy(@user.likes, items: 3)
     counts(@user)
   end
   
