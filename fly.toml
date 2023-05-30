@@ -1,9 +1,9 @@
-# fly.toml app configuration file generated for broken-shadow-2925 on 2023-05-30T08:36:56Z
+# fly.toml app configuration file generated for black-water-6435 on 2023-05-30T14:21:13Z
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = "broken-shadow-2925"
+app = "black-water-6435"
 primary_region = "nrt"
 console_command = "/rails/bin/rails console"
 
