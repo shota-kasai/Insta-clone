@@ -48,3 +48,4 @@ gem 'pagy'
 
 gem 'mini_magick'
 gem 'image_processing'
+gem 'rmagick'

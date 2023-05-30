@@ -8,7 +8,7 @@
             <%= link_to post.user.name, user_path(post.user), class: "text-decoration-none" %> <span class="text-muted">posted at <%= post.created_at %></span>
           </div>
           <div>
-            <%= image_tag post.image.variant(resize: '500x500') %>
+            <%= image_tag post.image.representation(resize_to_limit: [100, 100]) %>
           </div>
           <div>
             <p><%= post.caption %></p>
